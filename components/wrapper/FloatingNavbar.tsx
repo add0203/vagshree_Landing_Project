@@ -1,4 +1,4 @@
-"use client";
+"use client"; // This will mark the file as a Client Component
 import React, { useState } from "react";
 import {
   motion,
@@ -9,6 +9,8 @@ import {
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa"; // Hamburger icons
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Button4 from "@/components/ui/NavButton";
 
 interface NavItem {
   title: string;
@@ -27,8 +29,8 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(false); // Add state for menu
-  const [activeLink, setActiveLink] = useState<string>("Home");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState<string>("");
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     const direction = current - scrollYProgress.getPrevious()!;
@@ -37,30 +39,29 @@ export const FloatingNav = ({
 
   const handleLinkClick = (linkTitle: string) => {
     setActiveLink(linkTitle);
-    setMenuOpen(false); // Close menu on link click
+    setMenuOpen(false);
   };
 
   return (
     <>
       {/* Hamburger button */}
-
       <div
-        className={`fixed top-5 right-5 flex w-full px-10 ${
+        className={`fixed top-10 right-5 flex w-full px-10 ${
           menuOpen ? "z-[6000]" : "z-[5000]"
         } md:hidden`}
       >
         {/* Logo on the left */}
-        <Link href={"/"} className="flex items-center justify-start">
-          <img src="/app.svg" alt="Logo" className="h-5 w-auto" />
-        </Link>
-
         {/* Hamburger Menu on the right */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
           className="flex items-center justify-end gap-4"
         >
-          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          {menuOpen ? (
+            <FaTimes size={24} color="white" />
+          ) : (
+            <FaBars size={24} />
+          )}
         </button>
       </div>
 
@@ -73,10 +74,19 @@ export const FloatingNav = ({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className={cn(
-              "fixed inset-0 z-[5000] bg-black bg-opacity-95 flex flex-col items-center justify-center space-y-6",
+              "fixed inset-0 z-[5000] bg-black bg-opacity-90 flex flex-col items-center justify-center space-y-6",
               className
             )}
           >
+            <Link href={"/"} className="flex items-center justify-start">
+              <Image
+                src="/logos/logo-name-color.svg"
+                alt="Logo"
+                width={100}
+                height={80}
+                quality={90}
+              />
+            </Link>
             {navItems.map((navItem, idx) => (
               <Link
                 key={`link=${idx}`}
@@ -84,12 +94,17 @@ export const FloatingNav = ({
                 className={cn("text-white hover:text-neutral-300 text-xl", {
                   "font-bold": activeLink === navItem.title,
                 })}
-                onClick={() => handleLinkClick(navItem.title)}
+                onClick={() => handleLinkClick(navItem.title)} // Update active link on click
                 aria-label={navItem.title}
               >
                 {navItem.title}
               </Link>
             ))}
+            <Link href={"/contactus"} className="">
+              <div className="">
+                <Button4>Contact Us</Button4>
+              </div>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
@@ -113,7 +128,14 @@ export const FloatingNav = ({
             }}
           >
             <Link href={"/"} className="flex items-center justify-start">
-              <img src="/app.svg" alt="Logo" className="h-5 w-auto" />
+              <Image
+                src="/logos/logo-color.svg"
+                alt="Logo"
+                width={50}
+                height={50}
+                quality={100}
+                // className="w-auto"
+              />
             </Link>
 
             {navItems.map((navItem, idx) => (
@@ -131,30 +153,9 @@ export const FloatingNav = ({
               </Link>
             ))}
             <Link href={"/contactus"} className="">
-              <button
-                className={
-                  "relative py-2 px-3 rounded-lg font-medium text-sm  from-[#1f1f1f] to-[#3a3a3a] "
-                }
-              >
-                <div className={"absolute inset-0 rounded-lg"}>
-                  <div
-                    className={
-                      "absolute inset-0 border rounded-lg border-gray-500 [mask-image:linear-gradient(to_bottom,black,transparent)]"
-                    }
-                  />
-                  <div
-                    className={
-                      "absolute inset-0 border rounded-lg border-gray-500 [mask-image:linear-gradient(to_top,black,transparent)]"
-                    }
-                  />
-                  <div
-                    className={
-                      "absolute inset-0 rounded-lg shadow-[inset_0_0_2px_rgba(138,138,138,0.1)]"
-                    }
-                  />
-                </div>
-                <span className="text-white dark:text-white">Contact Us</span>
-              </button>
+              <div className="">
+                <Button4>Contact Us</Button4>
+              </div>
             </Link>
           </motion.div>
         )}
@@ -162,17 +163,3 @@ export const FloatingNav = ({
     </>
   );
 };
-
-{
-  /* <Link href={"/contactus"} className="">
-  <button
-    className={` h-12 w-auto  md:mt-0 m-0 overflow-hidden rounded-lg p-[1px] focus:outline-none`}
-  >
-    <span
-      className={`inline-flex h-full w-auto cursor-pointer items-center justify-center rounded-lg bg-slate-700 px-5 gap-2 text-sm font-medium text-white backdrop-blur-3xl`}
-    >
-      Contact Us
-    </span>
-  </button>
-</Link>; */
-}

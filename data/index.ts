@@ -20,18 +20,12 @@ export const navItems = [
   },
 
   {
-    title: "About",
+    title: "About Us",
     path: "/about",
     isRoute: false,
     isBottom: false,
   },
-  // {
-  //   title: "Contact Us",
-  //   path: "/contactus", // Assumes there's an element with id="contact-section" on the page
-  //   isRoute: true,
-  //   isBottom: false,
-  // },
-  { title: "Career", path: "/careers", isRoute: true, isBottom: false },
+  { title: "Careers", path: "/careers", isRoute: true, isBottom: false },
 ];
 
 // Home
@@ -43,7 +37,7 @@ export const navItems = [
 // Product :
 // Career
 
-const services = [
+export const services = [
   {
     title: "Aerial Surveys",
     description: "Conducting aerial surveys for various applications.",
@@ -233,8 +227,8 @@ export const gridItems = [
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
-    img: "/d3.gif",
-    spareImg: "/d3.gif",
+    img: "/d3.jpg",
+    spareImg: "/d3.jpg",
   },
   {
     id: 4,
@@ -383,25 +377,25 @@ export const companies = [
   },
 ];
 
-// Import each image
-import cl11 from "@/public/cl11.png";
-import cl22 from "@/public/cl2.png";
-import cl3 from "@/public/cl3.png";
-import cl8 from "@/public/cl4.png";
-import cl9 from "@/public/cl9.png";
-import cl7 from "@/public/cl7.png";
-import cl5 from "@/public/cl5.jpg";
+// // Import each image
+// import cl11 from "@/public/cl11.png";
+// import cl22 from "@/public/cl2.png";
+// import cl3 from "@/public/cl3.png";
+// import cl8 from "@/public/cl4.png";
+// import cl9 from "@/public/cl9.png";
+// import cl7 from "@/public/cl7.png";
+// import cl5 from "@/public/cl5.jpg";
 
-// Array of images with width and height
-export const companiesLogo = [
-  { src: cl11, width: 100, height: 50 },
-  { src: cl22, width: 100, height: 50 },
-  { src: cl3, width: 100, height: 50 },
-  { src: cl8, width: 100, height: 50 },
-  { src: cl9, width: 100, height: 50 },
-  { src: cl7, width: 100, height: 50 },
-  { src: cl5, width: 100, height: 50 },
-];
+// // Array of images with width and height
+// export const companiesLogo = [
+//   { src: cl11, width: 100, height: 50 },
+//   { src: cl22, width: 100, height: 50 },
+//   { src: cl3, width: 100, height: 50 },
+//   { src: cl8, width: 100, height: 50 },
+//   { src: cl9, width: 100, height: 50 },
+//   { src: cl7, width: 100, height: 50 },
+//   { src: cl5, width: 100, height: 50 },
+// ];
 
 export const workExperience = [
   {
@@ -437,14 +431,10 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
-    img: "/git.svg",
+    img: "/link.svg",
   },
   {
     id: 2,
     img: "/twit.svg",
-  },
-  {
-    id: 3,
-    img: "/link.svg",
   },
 ];
