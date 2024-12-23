@@ -1,3 +1,49 @@
+"use client";
+
+type Job = {
+  title: string;
+  jdLink: string;
+  applyLink: string;
+};
+
+export const jobList: Job[] = [
+  {
+    title: "Content Writer",
+    jdLink: "https://example.com/jd-content-writer.pdf", // Dummy PDF link
+    applyLink: "https://forms.gle/dummy-content-writer", // Dummy Google Form link
+  },
+  {
+    title: "Marketing Expert",
+    jdLink: "https://example.com/jd-marketing-expert.pdf",
+    applyLink: "https://forms.gle/dummy-marketing-expert",
+  },
+  {
+    title: "SDE1 (Full Stack Developer) MERN stack",
+    jdLink: "https://example.com/jd-sde1.pdf",
+    applyLink: "https://forms.gle/dummy-sde1",
+  },
+  {
+    title: "Business Development Executive Intern",
+    jdLink: "https://example.com/jd-business-dev.pdf",
+    applyLink: "https://forms.gle/dummy-business-dev",
+  },
+  {
+    title: "Graphic Designer",
+    jdLink: "https://example.com/jd-graphic-designer.pdf",
+    applyLink: "https://forms.gle/dummy-graphic-designer",
+  },
+  {
+    title: "Operation Intern",
+    jdLink: "https://example.com/jd-operation-intern.pdf",
+    applyLink: "https://forms.gle/dummy-operation-intern",
+  },
+  {
+    title: "Aircraft Design Engineer",
+    jdLink: "https://example.com/jd-aircraft-design.pdf",
+    applyLink: "https://forms.gle/dummy-aircraft-design",
+  },
+];
+
 export const navItems = [
   {
     title: "Home",
@@ -335,45 +381,52 @@ export const testimonials = [
 export const companies = [
   {
     id: 1,
-    name: "",
-    img: "",
-    nameImg: "/cl11.png",
+    name: "Company 1",
+    src: "/cl11.png", // Updated to match what the <Image> component expects
+    width: 100, // Set appropriate width
+    height: 50, // Set appropriate height
   },
   {
     id: 2,
-    name: "",
-    img: "",
-    nameImg: "/cl22.svg",
+    name: "Company 2",
+    src: "/cl22.svg",
+    width: 120,
+    height: 60,
   },
   {
     id: 3,
-    name: "",
-    img: "",
-    nameImg: "/cl3.png",
+    name: "Company 3",
+    src: "/cl3.png",
+    width: 90,
+    height: 45,
   },
   {
     id: 4,
-    name: "",
-    img: "",
-    nameImg: "/cl8.png",
+    name: "Company 4",
+    src: "/cl8.png",
+    width: 110,
+    height: 55,
   },
   {
     id: 5,
-    name: "",
-    img: "",
-    nameImg: "/cl9.png",
+    name: "Company 5",
+    src: "/cl9.png",
+    width: 100,
+    height: 50,
   },
   {
     id: 6,
-    name: "",
-    img: "",
-    nameImg: "/cl7.png",
+    name: "Company 6",
+    src: "/cl7.png",
+    width: 130,
+    height: 65,
   },
   {
     id: 7,
-    name: "",
-    img: "",
-    nameImg: "/cl5.jpg",
+    name: "Company 7",
+    src: "/cl5.jpg",
+    width: 140,
+    height: 70,
   },
 ];
 

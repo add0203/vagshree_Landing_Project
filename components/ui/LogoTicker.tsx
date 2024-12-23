@@ -1,8 +1,8 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { companiesLogo } from "@/data";
+import { companies } from "@/data";
 
 export function LogoTicker() {
   return (
@@ -23,7 +23,7 @@ export function LogoTicker() {
               }}
               className="flex flex-none gap-14 pr-14"
             >
-              {companiesLogo.map((company, index) => (
+              {companies.map((company, index) => (
                 <div
                   key={index}
                   style={{ width: company.width, height: company.height }}

@@ -71,7 +71,7 @@ const ContactUs = () => {
                 <div>
                   <h2 className="text-lg font-semibold">Email support</h2>
                   <p className="text-gray-600">
-                    Email us and we'll get back to you within 24 hours.
+                    Email us and we&lsquo;ll get back to you within 24 hours.
                   </p>
                   <a
                     href="mailto:support@untitledui.com"
