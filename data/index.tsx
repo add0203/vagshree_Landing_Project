@@ -1,12 +1,4 @@
-"use client";
-
-type Job = {
-  title: string;
-  jdLink: string;
-  applyLink: string;
-};
-
-export const jobList: Job[] = [
+export const jobList = [
   {
     title: "Content Writer",
     jdLink: "https://example.com/jd-content-writer.pdf", // Dummy PDF link
